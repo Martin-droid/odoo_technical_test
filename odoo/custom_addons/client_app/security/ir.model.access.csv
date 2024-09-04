@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_client_app_order,access_client_app_order,model_client_app_order,,1,1,1,1
+access_client_app_payment,access_client_app_payment,model_client_app_payment,,1,1,1,1
+access_client_app_invoice,access_client_app_invoice,model_client_app_invoice,,1,1,1,1

@@ -1,0 +1,14 @@
+<odoo>
+    <template id="report_profit_template">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <main>
+                    <h2>Profit Report for Order: <t t-esc="docs[0].name"/></h2>
+                    <p><strong>Total Revenue:</strong> <t t-esc="total_revenue"/></p>
+                    <p><strong>Total Discount:</strong> <t t-esc="total_discount"/></p>
+                    <p><strong>Total Profit:</strong> <t t-esc="total_profit"/></p>
+                </main>
+            </div>
+        </t>
+    </template>
+</odoo>

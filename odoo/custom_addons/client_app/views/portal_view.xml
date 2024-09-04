@@ -1,0 +1,20 @@
+<odoo>
+    <template id="portal_order_summary">
+        <t t-call="portal.layout">
+            <div class="container">
+                <h1>Your Orders</h1>
+                <div class="order-list">
+                    <t t-foreach="orders" t-as="order">
+                        <div class="order-card">
+                            <h3><t t-esc="order.name"/></h3>
+                            <p>Total Amount: <t t-esc="order.total_amount"/></p>
+                            <p>Status: <t t-esc="order.state"/></p>
+                            <p>Delivery Date: <t t-esc="order.delivery_date"/></p>
+                            <p>Priority: <t t-esc="order.priority"/></p>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

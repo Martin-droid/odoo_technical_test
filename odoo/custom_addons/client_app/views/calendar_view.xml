@@ -1,0 +1,14 @@
+<odoo>
+    <record id="view_delivery_calendar" model="ir.ui.view">
+        <field name="name">Delivery Calendar</field>
+        <field name="model">client.app.order</field>
+        <field name="arch" type="xml">
+            <calendar date_start="delivery_date" string="Delivery Calendar">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="customer_id"/>
+                <field name="priority"/>
+            </calendar>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,8 @@
+<odoo>
+    <template id="PaymentBarChart" name="Payment Bar Chart">
+        <div class="o_chart_container">
+            <h3>Total Payments per Day</h3>
+            <canvas id="paymentBarChart" width="400" height="200"></canvas>
+        </div>
+    </template>
+</odoo>

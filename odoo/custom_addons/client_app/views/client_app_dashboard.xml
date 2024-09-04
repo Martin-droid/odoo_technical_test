@@ -1,0 +1,29 @@
+<odoo>
+    <!-- Dashboard View for the Client App -->
+    <record id="view_client_app_dashboard" model="ir.ui.view">
+        <field name="name">client.app.dashboard</field>
+        <field name="model">client.app.dashboard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>Client App Dashboard</h1>
+                    <!-- Section to render the bar chart -->
+                    <div class="o_chart_container">
+                        <t t-call="client_app.PaymentBarChart"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for the Dashboard -->
+    <record id="client_app_dashboard_action" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">client.app.dashboard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_client_app_dashboard"/>
+    </record>
+
+    <!-- Add the dashboard to the main menu -->
+    <menuitem id="client_app_dashboard_menu" name="Dashboard" parent="client_app_menu" action="client_app_dashboard_action" sequence="5"/>
+</odoo>

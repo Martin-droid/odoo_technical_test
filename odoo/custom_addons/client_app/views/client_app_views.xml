@@ -1,0 +1,188 @@
+<odoo>
+    <!-- Main Menu Item for Client App -->
+    <menuitem id="client_app_menu" name="Client App" sequence="10"/>
+
+    <!-- Tree View for Orders -->
+    <record id="view_client_app_order_tree" model="ir.ui.view">
+        <field name="name">client.app.order.tree</field>
+        <field name="model">client.app.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="customer_id"/>
+                <field name="state"/>
+                <field name="total_amount"/>
+                <field name="delivery_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Orders -->
+    <record id="view_client_app_order_form" model="ir.ui.view">
+        <field name="name">client.app.order.form</field>
+        <field name="model">client.app.order</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="customer_id"/>
+                        <field name="state"/>
+                        <field name="total_amount"/>
+                        <field name="delivery_date"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View for Payments -->
+    <record id="view_client_app_payment_tree" model="ir.ui.view">
+        <field name="name">client.app.payment.tree</field>
+        <field name="model">client.app.payment</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="order_id"/>
+                <field name="amount"/>
+                <field name="payment_date"/>
+                <field name="payment_method"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Payments -->
+    <record id="view_client_app_payment_form" model="ir.ui.view">
+        <field name="name">client.app.payment.form</field>
+        <field name="model">client.app.payment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="order_id"/>
+                        <field name="amount"/>
+                        <field name="payment_date"/>
+                        <field name="payment_method"/>
+                        <field name="transaction_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View for Invoices -->
+    <record id="view_client_app_invoice_tree" model="ir.ui.view">
+        <field name="name">client.app.invoice.tree</field>
+        <field name="model">client.app.invoice</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="order_id"/>
+                <field name="total_amount"/>
+                <field name="invoice_date"/>
+                <field name="is_paid"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View for Invoices -->
+    <record id="view_client_app_invoice_form" model="ir.ui.view">
+        <field name="name">client.app.invoice.form</field>
+        <field name="model">client.app.invoice</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="order_id"/>
+                        <field name="total_amount"/>
+                        <field name="invoice_date"/>
+                        <field name="is_paid"/>
+                        <field name="due_date"/>
+                        <field name="payment_status"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Bar Chart View for Payment Statistics -->
+    <record id="view_client_app_payment_chart" model="ir.ui.view">
+        <field name="name">client.app.payment.chart</field>
+        <field name="model">client.app.payment</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h3>Total Payments Collected per Day</h3>
+                    <div class="o_chart_container">
+                        <canvas id="paymentBarChart" width="400" height="200"></canvas>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Order Views -->
+    <record id="client_app_order_action" model="ir.actions.act_window">
+        <field name="name">Orders</field>
+        <field name="res_model">client.app.order</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_client_app_order_tree"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new order.
+            </p>
+        </field>
+    </record>
+
+    <!-- Action for Payment Views -->
+    <record id="client_app_payment_action" model="ir.actions.act_window">
+        <field name="name">Payments</field>
+        <field name="res_model">client.app.payment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_client_app_payment_tree"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to record a new payment.
+            </p>
+        </field>
+    </record>
+
+    <!-- Action for Payment Chart View -->
+    <record id="client_app_payment_chart_action" model="ir.actions.act_window">
+        <field name="name">Payment Chart</field>
+        <field name="res_model">client.app.payment</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_client_app_payment_chart"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                This chart shows the total payments collected each day.
+            </p>
+        </field>
+    </record>
+
+    <!-- Action for Invoice Views -->
+    <record id="client_app_invoice_action" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">client.app.invoice</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_client_app_invoice_tree"/>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new invoice.
+            </p>
+        </field>
+    </record>
+
+    <!-- Sub Menu for Orders -->
+    <menuitem id="client_app_order_menu" name="Orders" parent="client_app_menu" action="client_app_order_action" sequence="10"/>
+
+    <!-- Sub Menu for Payments -->
+    <menuitem id="client_app_payment_menu" name="Payments" parent="client_app_menu" action="client_app_payment_action" sequence="20"/>
+
+    <!-- Sub Menu for Payment Chart -->
+    <menuitem id="client_app_payment_chart_menu" name="Payment Chart" parent="client_app_payment_menu" action="client_app_payment_chart_action" sequence="25"/>
+
+    <!-- Sub Menu for Invoices -->
+    <menuitem id="client_app_invoice_menu" name="Invoices" parent="client_app_menu" action="client_app_invoice_action" sequence="30"/>
+</odoo>

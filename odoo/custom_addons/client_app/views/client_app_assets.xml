@@ -1,0 +1,8 @@
+<odoo>
+    <template id="assets_backend" name="client_app_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/client_app/static/lib/chartjs/chart.min.js"></script>
+            <script type="text/javascript" src="/client_app/static/src/js/dashboard_chart.js"></script>
+        </xpath>
+    </template>
+</odoo>

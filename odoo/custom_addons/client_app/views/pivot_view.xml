@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_cash_collection_pivot" model="ir.ui.view">
+        <field name="name">Cash Collection Pivot</field>
+        <field name="model">client.app.payment</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="amount" type="measure"/>
+                <field name="payment_date" type="row"/>
+                <field name="order_id" type="col"/>
+                <field name="invoice_id" type="col"/>
+                <field name="customer_id" type="col"/>
+                <field name="payment_method" type="filter"/>
+            </pivot>
+        </field>
+    </record>
+</odoo>
