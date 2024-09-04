@@ -20,15 +20,22 @@ pip install -r requirements.txt
 
 **3. Set up PostgreSQL**
 
-Consider the below ; 
+Create an Odoo configuration file named odoo.conf in the root directory of your project with the following content:
 
 Install PostgreSQL and create a database:
+
 sudo -u postgres psql
+
 CREATE DATABASE odoo_db;
+
 CREATE USER odoo_user WITH PASSWORD 'yourpassword';
+
 ALTER ROLE odoo_user SET client_encoding TO 'utf8';
+
 ALTER ROLE odoo_user SET default_transaction_isolation TO 'read committed';
+
 ALTER ROLE odoo_user SET timezone TO 'UTC';
+
 GRANT ALL PRIVILEGES ON DATABASE odoo_db TO odoo_user;
 
 **4. Configure Odoo**
