@@ -15373,3 +15373,14 @@ FileNotFoundError: File not found: client_app/views/report_profit_template.xml
 2024-09-04 08:32:41,917 63015 INFO odoofinal werkzeug: 127.0.0.1 - - [04/Sep/2024 08:32:41] "POST /report/download HTTP/1.1" 200 - 107 0.081 4.758
 2024-09-04 08:32:41,939 63015 INFO odoofinal werkzeug: 127.0.0.1 - - [04/Sep/2024 08:32:41] "POST /web/dataset/call_kw/client.app.order/read HTTP/1.1" 200 - 3 0.001 0.001
 2024-09-04 08:32:58,749 63015 INFO odoofinal werkzeug: 127.0.0.1 - - [04/Sep/2024 08:32:58] "POST /web/dataset/call_kw/client.app.payment/onchange HTTP/1.1" 200 - 1 0.000 0.004
+2024-09-04 08:45:51,817 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Starting job `Mail: Email Queue Manager`. 
+2024-09-04 08:45:51,830 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Job `Mail: Email Queue Manager` done. 
+2024-09-04 08:45:51,836 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Starting job `Notification: Send scheduled message notifications`. 
+2024-09-04 08:45:51,842 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Job `Notification: Send scheduled message notifications` done. 
+2024-09-04 08:45:51,847 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Starting job `Partner Autocomplete : Sync with remote DB`. 
+2024-09-04 08:45:51,851 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Job `Partner Autocomplete : Sync with remote DB` done. 
+2024-09-04 08:45:51,856 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Starting job `SMS: SMS Queue Manager`. 
+2024-09-04 08:45:51,862 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Job `SMS: SMS Queue Manager` done. 
+2024-09-04 08:45:51,870 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Starting job `Snailmail: process letters queue`. 
+2024-09-04 08:45:51,876 63015 INFO odoofinal odoo.addons.base.models.ir_cron: Job `Snailmail: process letters queue` done. 
+2024-09-04 08:52:28,714 63015 INFO odoofinal werkzeug: 127.0.0.1 - - [04/Sep/2024 08:52:28] "GET /websocket HTTP/1.1" 101 - 1 0.028 0.012

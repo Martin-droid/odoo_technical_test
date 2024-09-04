@@ -3,7 +3,7 @@ import datetime
 from odoo import http
 from odoo.http import request
 
-SECRET_KEY = 'your_secret_key_here'
+SECRET_KEY = ''
 
 class ClientAppAuth(http.Controller):
 
