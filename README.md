@@ -19,6 +19,9 @@ Make sure to have Odoo dependencies installed. You can use the following command
 pip install -r requirements.txt
 
 **3. Set up PostgreSQL**
+
+Consider the below ; 
+
 Install PostgreSQL and create a database:
 sudo -u postgres psql
 CREATE DATABASE odoo_db;
